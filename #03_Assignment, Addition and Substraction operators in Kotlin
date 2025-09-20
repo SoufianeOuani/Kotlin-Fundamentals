@@ -1,0 +1,58 @@
+# 🔹 Assignment, Addition, and Subtraction Operators in Kotlin
+
+## 1. **Assignment Operator**
+
+Used to assign a value to a variable.
+
+```kotlin
+var x = 10   // assignment
+x = 20       // reassign new value
+```
+
+---
+
+## 2. **Addition Operators**
+
+* `+` → adds two values
+* `+=` → adds and assigns
+
+```kotlin
+var a = 5
+var b = 3
+
+val sum = a + b     // 5 + 3 = 8
+a += b              // a = a + b → 5 + 3 = 8
+println("sum = $sum, a = $a") // sum = 8, a = 8
+```
+
+---
+
+## 3. **Subtraction Operators**
+
+* `-` → subtracts two values
+* `-=` → subtracts and assigns
+
+```kotlin
+var x = 10
+var y = 4
+
+val diff = x - y   // 10 - 4 = 6
+x -= y             // x = x - y → 10 - 4 = 6
+println("diff = $diff, x = $x") // diff = 6, x = 6
+```
+
+---
+
+## 🔹 Quick Table
+
+| Operator | Meaning             | Example (`a=5, b=3`) | Result  |
+| -------- | ------------------- | -------------------- | ------- |
+| `=`      | Assignment          | `a = b`              | `a = 3` |
+| `+`      | Addition            | `a + b`              | `8`     |
+| `-`      | Subtraction         | `a - b`              | `2`     |
+| `+=`     | Add and assign      | `a += b`             | `a = 8` |
+| `-=`     | Subtract and assign | `a -= b`             | `a = 2` |
+
+---
+
+⚡ Extra: These also work with `Double`, `Float`, `Long`, etc.
