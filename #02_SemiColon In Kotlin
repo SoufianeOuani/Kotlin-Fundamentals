@@ -1,0 +1,37 @@
+
+In **Kotlin**, the **semicolon (`;`) is optional**.
+
+* You normally **don’t need it** at the end of a line.
+* You **can use it** if you want to put **multiple statements on the same line**.
+
+---
+
+### ✅ Example without semicolons (preferred style)
+
+```kotlin
+fun main() {
+    val a = 5
+    val b = 10
+    println(a + b)
+}
+```
+
+---
+
+### ✅ Example with semicolons
+
+```kotlin
+fun main() {
+    val a = 5; val b = 10; println(a + b);
+}
+```
+
+Both are valid. Kotlin’s compiler doesn’t complain, but idiomatic Kotlin code **avoids semicolons** unless needed.
+
+---
+
+⚡ So:
+
+* **Use them only when you write multiple statements on one line.**
+* Otherwise, **leave them out** for clean Kotlin code.
+
