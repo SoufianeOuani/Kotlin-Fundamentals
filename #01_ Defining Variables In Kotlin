@@ -1,0 +1,72 @@
+## 🔹 Two ways to define variables in Kotlin
+
+### 1. `val` → Immutable (read-only)
+
+* Like `final` in Java.
+* You **can’t reassign** after initialization.
+
+```kotlin
+val pi: Double = 3.14
+val name = "Sofiane"   // type is inferred as String
+// name = "Ali"   ❌ Error: Val cannot be reassigned
+```
+
+---
+
+### 2. `var` → Mutable (can change)
+
+* You **can reassign** values.
+
+```kotlin
+var age: Int = 21
+var city = "Casablanca"   // type inferred as String
+age = 22                  // ✅ works
+city = "Rabat"            // ✅ works
+```
+
+---
+
+## 🔹 Explicit vs Inferred Type
+
+**Explicit type:**
+
+```kotlin
+var number: Int = 10
+```
+
+**Type inference (preferred when obvious):**
+
+```kotlin
+var number = 10   // Kotlin infers type as Int
+```
+
+---
+
+## 🔹 Nullability
+
+By default, variables **cannot be null**.
+If you want a variable to hold `null`, add `?` after the type:
+
+```kotlin
+var nickname: String? = null
+nickname = "Sofi"
+```
+
+---
+
+## 🔹 Constants
+
+For compile-time constants, use `const val` (only allowed at top level or inside objects):
+
+```kotlin
+const val MAX_USERS = 100
+```
+
+---
+
+✅ Summary:
+
+* `val` → immutable (use whenever possible).
+* `var` → mutable.
+* `const val` → compile-time constant.
+* `?` → allows null values.
