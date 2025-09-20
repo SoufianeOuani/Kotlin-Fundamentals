@@ -1,58 +1,118 @@
-# 🔹 Assignment, Addition, and Subtraction Operators in Kotlin
+# 🔹 Assignment & Arithmetic Operators in Kotlin
 
 ## 1. **Assignment Operator**
 
-Used to assign a value to a variable.
+* `=` → assigns a value to a variable.
 
 ```kotlin
-var x = 10   // assignment
-x = 20       // reassign new value
+var x = 10    // x is 10
+x = 20        // reassign → now x is 20
 ```
 
 ---
 
-## 2. **Addition Operators**
+## 2. **Addition**
 
-* `+` → adds two values
-* `+=` → adds and assigns
+* `+` → adds two numbers.
+* `+=` → adds and assigns (shortcut for `a = a + b`).
 
 ```kotlin
 var a = 5
 var b = 3
 
-val sum = a + b     // 5 + 3 = 8
-a += b              // a = a + b → 5 + 3 = 8
-println("sum = $sum, a = $a") // sum = 8, a = 8
+val sum = a + b   // 5 + 3 = 8
+a += b            // a = 5 + 3 → 8
+println("sum = $sum, a = $a")  // sum = 8, a = 8
 ```
 
 ---
 
-## 3. **Subtraction Operators**
+## 3. **Subtraction**
 
-* `-` → subtracts two values
-* `-=` → subtracts and assigns
+* `-` → subtracts two numbers.
+* `-=` → subtracts and assigns.
 
 ```kotlin
 var x = 10
 var y = 4
 
 val diff = x - y   // 10 - 4 = 6
-x -= y             // x = x - y → 10 - 4 = 6
-println("diff = $diff, x = $x") // diff = 6, x = 6
+x -= y             // x = 10 - 4 → 6
+println("diff = $diff, x = $x")  // diff = 6, x = 6
 ```
 
 ---
 
-## 🔹 Quick Table
+## 4. **Multiplication**
 
-| Operator | Meaning             | Example (`a=5, b=3`) | Result  |
-| -------- | ------------------- | -------------------- | ------- |
-| `=`      | Assignment          | `a = b`              | `a = 3` |
-| `+`      | Addition            | `a + b`              | `8`     |
-| `-`      | Subtraction         | `a - b`              | `2`     |
-| `+=`     | Add and assign      | `a += b`             | `a = 8` |
-| `-=`     | Subtract and assign | `a -= b`             | `a = 2` |
+* `*` → multiplies two numbers.
+* `*=` → multiplies and assigns.
+
+```kotlin
+var m = 6
+var n = 2
+
+val product = m * n   // 6 * 2 = 12
+m *= n                // m = 6 * 2 → 12
+println("product = $product, m = $m")  // product = 12, m = 12
+```
 
 ---
 
-⚡ Extra: These also work with `Double`, `Float`, `Long`, etc.
+## 5. **Division**
+
+* `/` → divides two numbers.
+* `/=` → divides and assigns.
+
+```kotlin
+var p = 20
+var q = 5
+
+val div = p / q   // 20 / 5 = 4
+p /= q            // p = 20 / 5 → 4
+println("div = $div, p = $p")  // div = 4, p = 4
+```
+
+⚠️ Note:
+
+* If both operands are `Int`, result is also `Int` (fractional part is discarded).
+
+```kotlin
+println(7 / 2)    // 3
+println(7 / 2.0)  // 3.5 (because 2.0 is Double)
+```
+
+---
+
+## 6. **Modulo (Remainder)**
+
+* `%` → remainder after division.
+* `%=` → remainder and assign.
+
+```kotlin
+var k = 17
+var l = 5
+
+val mod = k % l   // 17 % 5 = 2
+k %= l            // k = 17 % 5 → 2
+println("mod = $mod, k = $k")  // mod = 2, k = 2
+```
+
+---
+
+## 🔹 Summary Table
+
+| Operator | Meaning                 | Example (`a=10, b=5`) | Result  |
+| -------- | ----------------------- | --------------------- | ------- |
+| `=`      | Assignment              | `a = b`               | `a = 5` |
+| `+`      | Addition                | `a + b`               | `15`    |
+| `-`      | Subtraction             | `a - b`               | `5`     |
+| `*`      | Multiplication          | `a * b`               | `50`    |
+| `/`      | Division (int division) | `a / b`               | `2`     |
+| `%`      | Modulo (remainder)      | `a % b`               | `0`     |
+| `+=`     | Add and assign          | `a += b`              | `15`    |
+| `-=`     | Subtract and assign     | `a -= b`              | `5`     |
+| `*=`     | Multiply and assign     | `a *= b`              | `50`    |
+| `/=`     | Divide and assign       | `a /= b`              | `2`     |
+| `%=`     | Modulo and assign       | `a %= b`              | `0`     |
+
