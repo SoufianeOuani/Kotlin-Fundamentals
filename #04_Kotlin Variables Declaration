@@ -1,0 +1,82 @@
+## **1️⃣ Two main keywords: `val` and `var`**
+
+### 🔹 `val` → Immutable (read-only)
+
+* Like `final` in Java.
+* You **can’t reassign** it after initialization.
+
+```kotlin
+val name = "Sofiane"
+name = "Ali"  // ❌ Error: Val cannot be reassigned
+```
+
+---
+
+### 🔹 `var` → Mutable (can change)
+
+* You **can reassign** its value.
+
+```kotlin
+var age = 21
+age = 22   // ✅ Works fine
+```
+
+---
+
+## **2️⃣ Type inference**
+
+* Kotlin can **infer the type** from the value, so you don’t always need to write the type explicitly:
+
+```kotlin
+val city = "Khénifra"   // Inferred as String
+var year = 2025         // Inferred as Int
+```
+
+---
+
+## **3️⃣ Explicit type declaration**
+
+* You can specify the type manually:
+
+```kotlin
+val country: String = "Morocco"
+var score: Int = 100
+```
+
+---
+
+## **4️⃣ Nullable vs Non-nullable**
+
+* By default, variables **cannot hold `null`**.
+
+```kotlin
+var job: String = "Developer"
+// job = null  // ❌ Error
+```
+
+* To allow `null`, add `?`:
+
+```kotlin
+var job: String? = "Developer"
+job = null   // ✅ Allowed
+```
+
+---
+
+## **5️⃣ Constants (`const val`)**
+
+* For compile-time constants (known at compile time, usually at top-level or inside `object`).
+
+```kotlin
+const val PI = 3.14
+```
+
+---
+
+✅ **Summary Table**
+
+| Keyword     | Meaning               | Reassignment | Example                |
+| ----------- | --------------------- | ------------ | ---------------------- |
+| `val`       | Immutable (read-only) | ❌ No         | `val name = "Sofiane"` |
+| `var`       | Mutable               | ✅ Yes        | `var age = 21`         |
+| `const val` | Compile-time constant | ❌ No         | `const val PI = 3.14`  |
