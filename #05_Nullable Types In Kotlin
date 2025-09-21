@@ -1,0 +1,73 @@
+## **1️⃣ Non-nullable types (default)**
+
+* By default, variables **cannot hold `null`** in Kotlin.
+
+```kotlin
+var name: String = "Sofiane"
+// name = null   // ❌ Error: null cannot be assigned
+```
+
+---
+
+## **2️⃣ Nullable types (`?`)**
+
+* If you want a variable to hold `null`, add `?` after the type.
+
+```kotlin
+var name: String? = "Sofiane"
+name = null   // ✅ Allowed
+```
+
+---
+
+## **3️⃣ Safe call operator (`?.`)**
+
+* Safely access a property or method without risking a `NullPointerException`.
+
+```kotlin
+println(name?.length)  // If name = null → returns null
+```
+
+---
+
+## **4️⃣ Elvis operator (`?:`)**
+
+* Provide a **default value** if the variable is `null`.
+
+```kotlin
+val length = name?.length ?: 0
+println(length)  // If name = null → prints 0
+```
+
+---
+
+## **5️⃣ Not-null assertion (`!!`)**
+
+* Tells the compiler: "I’m sure this is not null."
+* ⚠️ If it is actually `null`, it throws `NullPointerException`.
+
+```kotlin
+val length = name!!.length
+```
+
+---
+
+## **6️⃣ Safe cast (`as?`)**
+
+* Safely cast a value. If the cast fails, it returns `null` instead of crashing.
+
+```kotlin
+val obj: Any = "123"
+val num: Int? = obj as? Int  // returns null instead of exception
+```
+
+---
+
+✅ **Summary:**
+
+* `String` → non-nullable
+* `String?` → nullable
+* `?.` → safe call
+* `?:` → Elvis operator (default value)
+* `!!` → not-null assertion (dangerous if null)
+* `as?` → safe cast
