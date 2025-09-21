@@ -1,0 +1,154 @@
+
+1️⃣ Logical AND (&&)
+
+Returns true only if both operands are true.
+
+Short-circuits: if the first operand is false, the second is not evaluated.
+
+val a = true
+val b = false
+
+println(a && b)  // false
+println(a && true)  // true
+
+Example with numbers:
+val x = 10
+val y = 20
+
+if (x > 5 && y > 15) {
+    println("Both conditions are true")
+}
+
+
+Output:
+
+Both conditions are true
+
+2️⃣ Logical OR (||)
+
+Returns true if at least one operand is true.
+
+Short-circuits: if the first operand is true, the second is not evaluated.
+
+val a = true
+val b = false
+
+println(a || b)  // true
+println(false || false)  // false
+
+Example with numbers:
+val x = 10
+val y = 5
+
+if (x > 15 || y > 3) {
+    println("At least one condition is true")
+}
+
+
+Output:
+
+At least one condition is true
+
+3️⃣ Logical NOT (!)
+
+Inverts a Boolean value.
+
+val a = true
+println(!a)  // false
+
+4️⃣ Summary Table
+Operator	Meaning	Example	Result
+&&	Logical AND	true && false	false
+`		`	Logical OR
+!	Logical NOT	!true	false
+
+💡 Short-circuit behavior:
+
+&& → stops evaluation if left side is false
+
+|| → stops evaluation if left side is true
+
+If you want, I can make a small Kotlin program combining AND, OR, and NOT operators with user input to see all behaviors in action.
+
+Do you want me to do that?
+
+You said:
+what do you mean by this :
+💡 Short-circuit behavior:
+
+&& → stops evaluation if left side is false
+
+|| → stops evaluation if left side is true
+ChatGPT said:
+
+Ah, let me explain carefully. This is an important concept called short-circuit evaluation.
+
+1️⃣ Logical AND (&&)
+
+Rule: true && true → true, otherwise false.
+
+Short-circuit: If the left operand is false, Kotlin does not check the right operand because the whole expression cannot possibly be true.
+
+Example:
+
+fun checkA(): Boolean {
+    println("Checking A")
+    return false
+}
+
+fun checkB(): Boolean {
+    println("Checking B")
+    return true
+}
+
+fun main() {
+    val result = checkA() && checkB()
+    println("Result: $result")
+}
+
+
+Output:
+
+Checking A
+Result: false
+
+
+Notice: checkB() is never called, because checkA() is false, so false && anything is always false.
+
+2️⃣ Logical OR (||)
+
+Rule: false || false → false, otherwise true.
+
+Short-circuit: If the left operand is true, Kotlin does not check the right operand because the whole expression must be true.
+
+Example:
+
+fun checkA(): Boolean {
+    println("Checking A")
+    return true
+}
+
+fun checkB(): Boolean {
+    println("Checking B")
+    return false
+}
+
+fun main() {
+    val result = checkA() || checkB()
+    println("Result: $result")
+}
+
+
+Output:
+
+Checking A
+Result: true
+
+
+Notice: checkB() is never called, because checkA() is true, so true || anything is always true.
+
+✅ Key takeaway:
+
+Short-circuiting improves performance and avoids unnecessary computation.
+
+Also useful when the right side might cause an error (like accessing a nullable variable).
