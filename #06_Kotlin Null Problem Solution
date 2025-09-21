@@ -1,0 +1,93 @@
+One of the **biggest problems in Java** (and many other languages) is the **NullPointerException (NPE)**. Kotlin was designed to **solve this null problem** by making nullability part of its **type system**.
+
+Here’s how Kotlin provides solutions:
+
+---
+
+## **1️⃣ Non-nullable types (default safety)**
+
+* By default, variables cannot hold `null`.
+
+```kotlin
+var name: String = "Sofiane"
+// name = null  // ❌ Compile-time error
+```
+
+✅ Prevents assigning `null` accidentally.
+
+---
+
+## **2️⃣ Nullable types (`?`)**
+
+* If a variable should be able to hold `null`, you explicitly mark it.
+
+```kotlin
+var name: String? = "Sofiane"
+name = null  // ✅ Allowed
+```
+
+✅ Makes the possibility of `null` explicit.
+
+---
+
+## **3️⃣ Safe call operator (`?.`)**
+
+* Access properties/methods **only if not null**.
+
+```kotlin
+println(name?.length)  // returns null safely if name is null
+```
+
+✅ Avoids runtime crashes.
+
+---
+
+## **4️⃣ Elvis operator (`?:`)**
+
+* Provide a **default value** if null.
+
+```kotlin
+val length = name?.length ?: 0
+println(length)  // prints 0 if name is null
+```
+
+✅ Ensures fallback values instead of NPE.
+
+---
+
+## **5️⃣ Not-null assertion (`!!`)**
+
+* Force Kotlin to treat a value as non-null.
+
+```kotlin
+val length = name!!.length
+```
+
+⚠️ If `name` is null → throws `NullPointerException`.
+✅ Use only when you are 100% sure it’s not null.
+
+---
+
+## **6️⃣ Safe cast (`as?`)**
+
+* Try to cast safely; if it fails, return `null` instead of throwing.
+
+```kotlin
+val obj: Any = "123"
+val num: Int? = obj as? Int  // returns null instead of exception
+```
+
+✅ Prevents `ClassCastException`.
+
+---
+
+## **✅ Summary**
+
+Kotlin solves the null problem by:
+
+1. Making non-null the default.
+2. Forcing you to explicitly handle nullable values.
+3. Providing safe operators (`?.`, `?:`, `as?`).
+4. Allowing unsafe access (`!!`) only when you accept the risk.
+
+This design **greatly reduces NullPointerExceptions**, making programs safer.
