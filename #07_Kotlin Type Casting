@@ -1,0 +1,80 @@
+## **1️⃣ Implicit casting (automatic)**
+
+Kotlin is **type-safe** and doesn’t do implicit casts like Java.
+You must cast explicitly if needed.
+
+```kotlin
+val x: Int = 10
+val y: Number = x  // ✅ Works because Int is a subtype of Number
+```
+
+---
+
+## **2️⃣ Unsafe cast (`as`)**
+
+* Forces the compiler to cast a type.
+* If the cast fails, it throws a **ClassCastException**.
+
+```kotlin
+val obj: Any = "Hello"
+val str: String = obj as String   // ✅ Works
+val num: Int = obj as Int         // ❌ Runtime error: ClassCastException
+```
+
+---
+
+## **3️⃣ Safe cast (`as?`)**
+
+* Returns `null` if the cast fails (instead of crashing).
+* Result is always **nullable**.
+
+```kotlin
+val obj: Any = "Hello"
+val str: String? = obj as? String   // ✅ "Hello"
+val num: Int? = obj as? Int         // ✅ null (no crash)
+```
+
+---
+
+## **4️⃣ Type check (`is` and `!is`)**
+
+* Check a variable’s type at runtime.
+* If inside an `if`, Kotlin automatically casts it (smart cast).
+
+```kotlin
+val obj: Any = "Sofiane"
+
+if (obj is String) {
+    println(obj.length)   // Smart cast → no need to cast manually
+}
+
+if (obj !is Int) {
+    println("Not an Int")
+}
+```
+
+---
+
+## **5️⃣ Smart casting**
+
+* Kotlin automatically casts after a type check.
+* Works with `is` inside conditions.
+
+```kotlin
+fun printLength(x: Any) {
+    if (x is String) {
+        println(x.length) // Smart cast: no need for "x as String"
+    }
+}
+```
+
+---
+
+✅ **Summary Table**
+
+| Feature       | Syntax      | Behavior                        |
+| ------------- | ----------- | ------------------------------- |
+| Unsafe cast   | `as`        | Throws exception if cast fails  |
+| Safe cast     | `as?`       | Returns `null` if cast fails    |
+| Type check    | `is`, `!is` | Checks type before casting      |
+| Smart casting | after `is`  | Auto-cast inside the `if` scope |
