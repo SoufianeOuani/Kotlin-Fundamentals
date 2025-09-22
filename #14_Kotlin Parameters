@@ -1,0 +1,113 @@
+## 🔹 What are Parameters?
+
+Parameters are **placeholders** inside a function definition that allow you to pass data into the function when it’s called.
+
+👉 Think of them as **inputs** to a function.
+
+---
+
+## 1. **Basic Parameters**
+
+```kotlin
+fun greet(name: String) {
+    println("Hello, $name!")
+}
+
+fun main() {
+    greet("Sofia")   // Hello, Sofia!
+    greet("Ali")     // Hello, Ali!
+}
+```
+
+✔ Here `name: String` is a parameter.
+
+---
+
+## 2. **Multiple Parameters**
+
+A function can take more than one parameter.
+
+```kotlin
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+
+fun main() {
+    println(add(5, 3))   // 8
+}
+```
+
+---
+
+## 3. **Default Parameters**
+
+You can assign default values to parameters.
+If no value is passed, the default will be used.
+
+```kotlin
+fun greet(name: String = "Guest") {
+    println("Hello, $name!")
+}
+
+fun main() {
+    greet()          // Hello, Guest!
+    greet("Sofia")   // Hello, Sofia!
+}
+```
+
+---
+
+## 4. **Named Parameters**
+
+You can call a function using parameter names.
+This is very useful when there are many parameters, especially with defaults.
+
+```kotlin
+fun displayInfo(name: String, age: Int, city: String = "Unknown") {
+    println("$name is $age years old from $city")
+}
+
+fun main() {
+    displayInfo(age = 21, name = "Sofia")  
+    // Sofia is 21 years old from Unknown
+}
+```
+
+---
+
+## 5. **Varargs (Variable Number of Parameters)**
+
+Use `vararg` to pass **multiple arguments** of the same type.
+
+```kotlin
+fun printNumbers(vararg numbers: Int) {
+    for (n in numbers) {
+        println(n)
+    }
+}
+
+fun main() {
+    printNumbers(1, 2, 3, 4, 5)
+}
+```
+
+👉 Output:
+
+```
+1
+2
+3
+4
+5
+```
+
+---
+
+## ✅ Summary
+
+* **Parameters** let functions receive input.
+* **Multiple parameters** are separated by commas.
+* **Default parameters** provide optional values.
+* **Named parameters** improve readability and flexibility.
+* **Varargs** allow passing many values at once.
+
