@@ -1,0 +1,106 @@
+## 🔹 1. **Default Arguments**
+
+You can assign default values to parameters. This way, if the caller omits an argument, the default is used.
+
+```kotlin
+fun greet(name: String = "Guest", greeting: String = "Hello") {
+    println("$greeting, $name!")
+}
+
+fun main() {
+    greet()                    // Hello, Guest!
+    greet("Sofia")             // Hello, Sofia!
+    greet("Ali", "Hi")         // Hi, Ali!
+}
+```
+
+---
+
+## 🔹 2. **Named Arguments**
+
+You can call a function using parameter names. This improves readability and allows skipping parameters with defaults.
+
+```kotlin
+fun order(item: String, quantity: Int = 1, price: Double = 10.0) {
+    println("Item: $item, Quantity: $quantity, Price: $price")
+}
+
+fun main() {
+    order(item = "Book", price = 12.5)  
+    // Item: Book, Quantity: 1, Price: 12.5
+}
+```
+
+---
+
+## 🔹 3. **Varargs (Variable Number of Arguments)**
+
+`vararg` lets a function accept **zero or more arguments** of the same type.
+
+```kotlin
+fun sumAll(vararg numbers: Int): Int {
+    var sum = 0
+    for (num in numbers) {
+        sum += num
+    }
+    return sum
+}
+
+fun main() {
+    println(sumAll(1, 2, 3))         // 6
+    println(sumAll(5, 10, 15, 20))   // 50
+}
+```
+
+* Only **one `vararg` per function** is allowed.
+* If you pass an **array**, use the `*` operator:
+
+```kotlin
+val nums = intArrayOf(1, 2, 3)
+println(sumAll(*nums)) // 6
+```
+
+---
+
+## 🔹 4. **Infix Functions**
+
+An infix function allows calling a function without parentheses or dots. Only works for **single-parameter functions** defined with `infix`.
+
+```kotlin
+infix fun Int.times(str: String) = str.repeat(this)
+
+fun main() {
+    println(3 times "Hi ")  // Hi Hi Hi 
+}
+```
+
+---
+
+## 🔹 5. **Lambda Arguments / Higher-Order Functions**
+
+Functions can accept **other functions as arguments**.
+
+```kotlin
+fun operate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    return operation(a, b)
+}
+
+fun main() {
+    val sum = operate(5, 3) { x, y -> x + y }
+    val multiply = operate(5, 3) { x, y -> x * y }
+
+    println(sum)       // 8
+    println(multiply)  // 15
+}
+```
+
+---
+
+## 🔹 Summary
+
+* **Default arguments** → provide optional values.
+* **Named arguments** → improve readability and flexibility.
+* **Varargs** → accept multiple arguments.
+* **Infix functions** → cleaner, natural syntax for certain single-argument functions.
+* **Higher-order functions** → pass functions as arguments.
+
