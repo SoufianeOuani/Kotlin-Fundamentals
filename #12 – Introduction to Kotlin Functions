@@ -1,0 +1,132 @@
+## 🔹 What is a Function?
+
+A **function** is a block of reusable code that performs a specific task.
+Instead of repeating code, you **define it once** and then **call it** whenever needed.
+
+---
+
+## 1. **Defining a function**
+
+Basic syntax:
+
+```kotlin
+fun functionName(parameters): ReturnType {
+    // code to execute
+    return value
+}
+```
+
+### Example:
+
+```kotlin
+fun greet() {
+    println("Hello, Kotlin!")
+}
+
+fun main() {
+    greet()  // calling the function
+}
+```
+
+👉 Output: `Hello, Kotlin!`
+
+---
+
+## 2. **Functions with parameters**
+
+You can pass data to a function using parameters.
+
+```kotlin
+fun greetUser(name: String) {
+    println("Hello, $name!")
+}
+
+fun main() {
+    greetUser("Sofia")
+    greetUser("Ali")
+}
+```
+
+👉 Output:
+
+```
+Hello, Sofia!  
+Hello, Ali!
+```
+
+---
+
+## 3. **Functions with return values**
+
+Functions can return results using the `return` keyword.
+
+```kotlin
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+
+fun main() {
+    val result = add(5, 3)
+    println("Sum = $result")  // Output: Sum = 8
+}
+```
+
+---
+
+## 4. **Single-expression functions**
+
+If the function has only one expression, you can shorten it:
+
+```kotlin
+fun multiply(a: Int, b: Int) = a * b
+
+fun main() {
+    println(multiply(4, 6)) // Output: 24
+}
+```
+
+👉 No need for `{ }` or `return`.
+
+---
+
+## 5. **Default parameters**
+
+You can give parameters default values:
+
+```kotlin
+fun greetUser(name: String = "Guest") {
+    println("Hello, $name!")
+}
+
+fun main() {
+    greetUser("Sofia")   // Hello, Sofia!
+    greetUser()          // Hello, Guest!
+}
+```
+
+---
+
+## 6. **Named arguments**
+
+When calling a function, you can specify parameter names:
+
+```kotlin
+fun displayInfo(name: String, age: Int) {
+    println("$name is $age years old.")
+}
+
+fun main() {
+    displayInfo(age = 21, name = "Sofia")
+    // Output: Sofia is 21 years old.
+}
+```
+
+---
+
+✅ **Summary:**
+
+* Functions help organize and reuse code.
+* Can have **parameters** and **return values**.
+* Can be **shortened** with single-expression syntax.
+* Support **default values** and **named arguments** for flexibility.
+
