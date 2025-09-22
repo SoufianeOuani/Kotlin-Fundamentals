@@ -1,0 +1,124 @@
+## 🔹 What are loops?
+
+Loops allow you to **repeat a block of code** multiple times without writing it over and over.
+
+In Kotlin, the main loops are:
+
+1. `for` loop
+2. `while` loop
+3. `do...while` loop
+
+---
+
+## 1. **for loop**
+
+Used when you know how many times you want to repeat something.
+
+### Example: iterate over a range
+
+```kotlin
+for (i in 1..5) {
+    println(i)
+}
+```
+
+👉 Output:
+
+```
+1
+2
+3
+4
+5
+```
+
+* `1..5` = range from 1 to 5 (inclusive).
+
+* You can also use `until` (excludes the last number):
+
+  ```kotlin
+  for (i in 1 until 5) {
+      println(i) // prints 1, 2, 3, 4
+  }
+  ```
+
+* You can step through values:
+
+  ```kotlin
+  for (i in 10 downTo 1 step 2) {
+      println(i)
+  }
+  // 10, 8, 6, 4, 2
+  ```
+
+---
+
+### Example: iterate over a collection
+
+```kotlin
+val fruits = listOf("Apple", "Banana", "Cherry")
+
+for (fruit in fruits) {
+    println(fruit)
+}
+```
+
+---
+
+## 2. **while loop**
+
+Repeats as long as a condition is true.
+
+```kotlin
+var x = 1
+
+while (x <= 5) {
+    println(x)
+    x++
+}
+```
+
+👉 Output: `1 2 3 4 5`
+
+⚠️ Make sure the condition eventually becomes false, otherwise you get an **infinite loop**.
+
+---
+
+## 3. **do...while loop**
+
+Similar to `while`, but it **always runs at least once** (because the condition is checked after the loop body).
+
+```kotlin
+var y = 1
+
+do {
+    println(y)
+    y++
+} while (y <= 5)
+```
+
+---
+
+## 4. **Control keywords inside loops**
+
+* `break` → exit the loop completely
+* `continue` → skip the current iteration and move to the next
+
+```kotlin
+for (i in 1..5) {
+    if (i == 3) continue  // skip 3
+    if (i == 5) break     // stop loop at 5
+    println(i)
+}
+```
+
+👉 Output: `1, 2, 4`
+
+---
+
+✅ **Summary:**
+
+* Use `for` with ranges or collections.
+* Use `while` when the number of repetitions isn’t known in advance.
+* Use `do...while` if you need the loop to run at least once.
+* Use `break` and `continue` to control loop execution.
