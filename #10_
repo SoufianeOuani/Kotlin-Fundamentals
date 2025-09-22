@@ -1,0 +1,116 @@
+## 🔹 What are conditional statements?
+
+Conditional statements let your program **make decisions**:
+
+> “If a condition is true → do something, otherwise → do something else.”
+
+In Kotlin, the main tools are:
+
+1. `if` / `else`
+2. `when` (similar to `switch` in other languages)
+3. Nested or chained conditions
+
+---
+
+## 1. **if / else**
+
+This is the simplest way to check a condition.
+
+```kotlin
+val age = 18
+
+if (age >= 18) {
+    println("You are an adult")
+} else {
+    println("You are underage")
+}
+```
+
+👉 If `age >= 18` is true, it prints `"You are an adult"`.
+Otherwise, it executes the `else` block.
+
+---
+
+## 2. **if as an expression**
+
+In Kotlin, `if` can also **return a value** (not just control the flow).
+
+```kotlin
+val number = 10
+val result = if (number % 2 == 0) "Even" else "Odd"
+println(result) // Output: Even
+```
+
+👉 Here, `if` directly returns `"Even"` or `"Odd"`.
+
+---
+
+## 3. **if / else if chain**
+
+For multiple conditions:
+
+```kotlin
+val score = 75
+
+if (score >= 90) {
+    println("Excellent")
+} else if (score >= 75) {
+    println("Good")
+} else if (score >= 50) {
+    println("Pass")
+} else {
+    println("Fail")
+}
+```
+
+👉 Checks conditions one by one, top to bottom.
+
+---
+
+## 4. **when statement** (powerful alternative to multiple `if / else if`)
+
+`when` is like a smarter `switch`:
+
+```kotlin
+val day = 3
+
+when (day) {
+    1 -> println("Monday")
+    2 -> println("Tuesday")
+    3 -> println("Wednesday")
+    4, 5 -> println("Thursday or Friday")
+    in 6..7 -> println("Weekend")
+    else -> println("Invalid day")
+}
+```
+
+✔ Features of `when`:
+
+* Can check **multiple values** (`4, 5`)
+* Can check **ranges** (`in 6..7`)
+* Requires `else` if not all possibilities are covered
+
+---
+
+## 5. **when as an expression**
+
+Just like `if`, `when` can return a value:
+
+```kotlin
+val x = 2
+val text = when (x) {
+    1 -> "One"
+    2 -> "Two"
+    else -> "Other"
+}
+println(text) // Output: Two
+```
+
+---
+
+✅ **Summary:**
+
+* Use `if`/`else` for simple true/false decisions.
+* Use `if` as an **expression** when you want to return a value.
+* Use `when` when you have multiple conditions, ranges, or want cleaner code.
+
